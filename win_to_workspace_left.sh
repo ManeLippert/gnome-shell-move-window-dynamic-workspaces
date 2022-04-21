@@ -1,12 +1,3 @@
-# Move Windows Wraparound in dynamically associated Workspaces
-
-## Dependencies
-```
-sudo apt install xdotool wmctrl
-```
-
-## Move Window to the Leftward Workspace
-```
 #!/bin/bash
 # xdotool needed
 
@@ -21,5 +12,3 @@ then
 else
     xdotool getactivewindow set_desktop_for_window $DESKTOPLEFTWARD && xdotool set_desktop $DESKTOPLEFTWARD
 fi
-```
-
