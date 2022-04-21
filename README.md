@@ -7,6 +7,10 @@ sudo apt install xdotool wmctrl
 
 ## Move Window to the Leftward Workspace
 ```
+win_to_workspace_left.sh
+```
+
+```
 #!/bin/bash
 # xdotool needed
 
