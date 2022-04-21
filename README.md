@@ -1,11 +1,24 @@
 # Move Windows Wraparound in dynamically associated Workspaces
+Good to use with **Gnome 40+** in combination with keyboard shortcuts.
+
+![SwitchWorkspace](workspaceswitch.gif)
 
 ## Dependencies
 ```
 sudo apt install xdotool wmctrl
 ```
 
-## Move Window to the Leftward Workspace
+## Installation
+make bash script executable
+```
+chmod u+x win_to_workspace_left.sh
+```
+```
+chmod u+x win_to_workspace_right.sh
+```
+
+## Move Window
+### To the Leftward Workspace
 ```
 win_to_workspace_left.sh
 ```
@@ -27,3 +40,46 @@ else
 fi
 ```
 
+### To the Rightward Workspace
+```
+win_to_workspace_right.sh
+```
+
+```
+#!/bin/bash
+# xdotool and wmctrl needed
+
+# generate desktop number for the rightward monitor
+DESKTOPRIGHTWARD="$(($(xdotool getactivewindow get_desktop_for_window)+1))"
+DESKTOPSTART=0
+
+# count open windows to know the end of the workspaces
+OPENWINDOWS=$(wmctrl -l | cut -d ' ' -f3 | grep $(wmctrl -d | grep '*' | cut -d ' ' -f1) | wc -l)
+
+# change desktop to the right
+if [[ $OPENWINDOWS -eq 1 ]]
+then
+    xdotool getactivewindow set_desktop_for_window $DESKTOPSTART && xdotool set_desktop $DESKTOPSTART
+else
+    xdotool getactivewindow set_desktop_for_window $DESKTOPRIGHTWARD && xdotool set_desktop $DESKTOPRIGHTWARD
+fi
+```
+
+## Switch Workspace
+
+### To the Leftward Workspace
+```
+xdotool set_desktop --relative -- -1
+```
+
+### To the Rightward Workspace
+```
+xdotool set_desktop --relative 1
+```
+
+## In the Video
+* [Pop!_OS](https://pop.system76.com/)
+* [Pop-Shell](https://github.com/pop-os/shell)
+* [neofetch](https://github.com/dylanaraps/neofetch)
+* [Fildem Global Menu](https://github.com/gonzaarcr/Fildem)
+* [Visual Studio Code](https://code.visualstudio.com/)
