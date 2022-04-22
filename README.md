@@ -1,8 +1,8 @@
 # Move Windows Wraparound in dynamically associated Workspaces
+
+![SwitchWorkspace](workspaceswitch_numbers.gif)
+
 Good to use with **Gnome 40+** in combination with keyboard shortcuts.
-
-![SwitchWorkspace](workspaceswitch.gif)
-
 ## Dependencies
 ```
 sudo apt install xdotool wmctrl
@@ -86,3 +86,4 @@ xdotool set_desktop --relative 1
 * [neofetch](https://github.com/dylanaraps/neofetch)
 * [Fildem Global Menu](https://github.com/gonzaarcr/Fildem)
 * [Visual Studio Code](https://code.visualstudio.com/)
+* [Numbers in Terminal](https://github.com/ManeLippert/terminal-numbers)
