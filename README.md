@@ -20,7 +20,7 @@ chmod u+x win_to_workspace_right.sh
 ## Move Window
 ### To the Leftward Workspace
 ```
-win_to_workspace_left.sh
+./win_to_workspace_left.sh
 ```
 
 ```
@@ -42,7 +42,7 @@ fi
 
 ### To the Rightward Workspace
 ```
-win_to_workspace_right.sh
+./win_to_workspace_right.sh
 ```
 
 ```
